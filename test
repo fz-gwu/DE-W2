@@ -1,0 +1,17 @@
+litgpt finetune_lora /home/ec2-user/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/checkpoints/meta-llama/Meta-Llama-3-8B-Instruct \
+    --data JSON \
+    --data.json_path /home/ec2-user/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/data/test/test.json \
+    --out_dir dataset/mydata-finetuned \
+    --data.val_split_fraction 1
+
+
+
+
+
+litgpt finetune_lora stabilityai/stablelm-base-alpha-3b \
+    --data Alpaca2k \
+    --train.global_batch_size 2 \
+    --train.max_seq_length 64 \
+    --eval.max_new_tokens 25 \
+    --lora_r 2
+    
